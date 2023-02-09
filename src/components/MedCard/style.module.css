@@ -167,4 +167,11 @@
   .backgroundText {
     display: none;
   }
+  .cardContent {
+    height: auto;
+  }
+
+  .cardContent h3 {
+    font-size: 1rem;
+  }
 }
