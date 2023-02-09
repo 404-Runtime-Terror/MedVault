@@ -64,3 +64,14 @@
   height: 100%;
   width: 100%;
 }
+
+@media screen and (max-width: 530px) {
+  .card {
+    transform: scale(0.8);
+  }
+}
+@media screen and (max-width: 530px) {
+  .card {
+    transform: scale(0.8);
+  }
+}
