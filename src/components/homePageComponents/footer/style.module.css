@@ -12,16 +12,18 @@
     content : " ";
     position: absolute;
     left:10%;
-    /* left:-123px; */
-    height: 110px;
-    width: 2px;
-    /* border-left: thick solid white; */
+    height: 90px;
+    width: 1px;
     background-color: #fff;
+    margin-left: 10px;
 }
 .icon{
-    font-size: 30px;
+    font-size: 40px;
     margin: 5px;    
-    size:30px;
+    size:90px;
     color: #fff;
+}
+.list{
+    margin-bottom: 3px;
 }
 
