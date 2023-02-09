@@ -1,0 +1,14 @@
+.footer{
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+}
+.icon{
+    font-size: 30px;
+    margin: 10px;
+    color: #fff;
+}
