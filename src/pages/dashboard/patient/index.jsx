@@ -2,6 +2,7 @@ import React from "react";
 import Prescription from "../../../components/Prescription";
 import Vaccine from "../../../components/Vaccine";
 import MedCard from "../../../components/MedCard";
+import PrescriptionForm from "../../../components/PrescriptionForm";
 import Button from "../../../components/Button";
 
 // import useScreenWidth from "@/hooks/useScreenWidth";
@@ -15,6 +16,7 @@ const index = () => {
   const [toggle, SetToggle] = React.useState(false);
   return (
     <>
+      <PrescriptionForm />
       <h2>Patient Dashboard</h2>
       <div className={styles.card}>
         <MedCard />
