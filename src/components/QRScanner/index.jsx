@@ -1,26 +1,40 @@
 import React, { useState } from "react";
 import QrReader from "react-web-qr-reader";
 
-const QRScanner = () => {
+const QRScanner = (props) => {
   const delay = 500;
 
   const previewStyle = {
-    height: 240,
+    height: "fit-content",
     width: 320,
   };
 
-  const [result, setResult] = useState("No result");
-
   const handleScan = (result) => {
     if (result) {
-      setResult(result);
-      console.log(result);
+      props.setResut(result);
     }
   };
 
   const handleError = (error) => {
     console.log(error);
   };
+
+  React.useEffect(() => {
+    var constraints = { audio: false, video: true };
+
+    function successCallback(stream) {
+      console.log("navigator.getUserMedia success: ", stream);
+    }
+
+    function errorCallback(error) {
+      console.log("navigator.getUserMedia error: ", error);
+    }
+
+    navigator.mediaDevices
+      .getUserMedia(constraints)
+      .then(successCallback)
+      .catch(errorCallback);
+  }, []);
 
   return (
     <>
@@ -30,7 +44,6 @@ const QRScanner = () => {
         onError={handleError}
         onScan={handleScan}
       />
-      <p>{result.data}</p>
     </>
   );
 };
