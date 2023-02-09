@@ -2,18 +2,20 @@
     display:flex;
     background-color: var(--secondary-color);
     color: #fff;
-    padding: 25px;
+    padding: 20px;
     font-size: 22px;
     font-weight: 600;
     font-family: 'Roboto', sans-serif;
-     justify-content: space-between; 
+    justify-content: space-between; 
+    border-radius: var(--border-radius);
 }
 
 
 .footerLeft{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: row;
+    width:fit-content;
 }
 
 .logo{
@@ -27,24 +29,18 @@
 .foot{
     font-size: 60px;
 }
-.verticalLine{
-    content : " ";
-    position: absolute;
-    left:10%;
-    height: 90px;
-    width: 1px;
-    background-color: #fff;
-    margin-left: 50px;
-}
+
 .icon{
     font-size: 40px;
     margin: 5px;    
     size:90px;
     justify-content:flex-end;
     color: #fff;
+    width:fit-content;
 }
 .list{
     margin-bottom: 3px;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
 }
 

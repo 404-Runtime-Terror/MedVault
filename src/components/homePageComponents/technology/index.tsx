@@ -43,7 +43,7 @@ const technology = () => {
                         Log in to access and manage your medical records.
                         </li>
                         <li>
-                        MediCard interface and QR code integration for easy access.
+                        MedCard interface and QR code integration for easy access.
                         </li>
                         <li>
                         Search medical records by date for patients, and by patient for healthcare providers.
@@ -68,13 +68,13 @@ const technology = () => {
                                         <IoLogoNodejs className={style.icon} />
                                         <h1 className={style.appName}>Nodejs</h1>
                                     </div>
-                                <p className={style.list}></p>
+                                <p className={style.list}> Node.js is a back-end JavaScript runtime environment.</p>
 
                                 <div className={style.logo}>
                                     <DiMongodb className={style.icon} />
                                     <h1 className={style.appName}>MongoDB</h1>
                                 </div>
-                                <p className={style.list}></p>
+                                <p className={style.list}>MongoDB is a source-available  document-oriented database program.</p>
 
                             </div>
                                 </motion.div>
@@ -93,12 +93,12 @@ const technology = () => {
                                         <AiFillGithub className={style.icon} />
                                         <h1 className={style.appName}>Github</h1>
                                     </div>
-                                <p className={style.list}></p>
+                                <p className={style.list}>GitHub is an Internet hosting service for version control.</p>
                                 <div className={style.logo}>
                                     <DiReact className={style.icon} />
                                     <h1 className={style.appName}>React</h1>
                                 </div>
-                                <p className={style.list}></p>
+                                <p className={style.list}>React is a open-source JavaScript library for building user interfaces.</p>
                             </div>
                                 </motion.div>
                         </div>
