@@ -22,7 +22,6 @@ const Doctor = () => {
       <br />
       <br />
       <br />
-      <NewUser />
     </>
   );
 };
