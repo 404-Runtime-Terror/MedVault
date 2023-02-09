@@ -19,15 +19,6 @@ const Vaccine = (props) => {
           <h4 className={style.hosName}>5 Star Hospital,Nagpur</h4>
           </div>
         </div>
-        {/* <div className={style.vaccineBody}>
-            <ul className={style.medicine}>
-                <li className={style.vaccineList}>Hydrocodone</li>
-                <li className={style.vaccineList}>generic Zocor</li>
-                <li className={style.vaccineList}>lisinopril</li>
-                <li className={style.vaccineList}>generic Synthroid</li>
-                <li className={style.vaccineList}>generic Norvasc</li>
-            </ul>
-            </div> */}
       </div>
     </>
   );
