@@ -33,7 +33,7 @@ const navbar = () => {
             </div> */}
                 
 
-                <div ref={Home}>
+                <div  ref={Home}>
                     <Aboutus />
                     {/* <FcAbout  /> */}
                 </div>

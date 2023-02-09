@@ -68,13 +68,13 @@ const technology = () => {
                                         <IoLogoNodejs className={style.icon} />
                                         <h1 className={style.appName}>Nodejs</h1>
                                     </div>
-                                <p className={style.list}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic qua</p>
+                                <p className={style.list}></p>
 
                                 <div className={style.logo}>
                                     <DiMongodb className={style.icon} />
                                     <h1 className={style.appName}>MongoDB</h1>
                                 </div>
-                                <p className={style.list}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic qua</p>
+                                <p className={style.list}></p>
 
                             </div>
                                 </motion.div>
@@ -93,12 +93,12 @@ const technology = () => {
                                         <AiFillGithub className={style.icon} />
                                         <h1 className={style.appName}>Github</h1>
                                     </div>
-                                <p className={style.list}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic qua</p>
+                                <p className={style.list}></p>
                                 <div className={style.logo}>
                                     <DiReact className={style.icon} />
                                     <h1 className={style.appName}>React</h1>
                                 </div>
-                                <p className={style.list}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic qua</p>
+                                <p className={style.list}></p>
                             </div>
                                 </motion.div>
                         </div>
