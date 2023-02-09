@@ -19,7 +19,7 @@ const Footer = () => {
 
         <div className={style.Foot}>Health Vault</div>
       </div>
-      <div
+      <div 
         style={{
           display: "flex",
           justifyContent: "center",
@@ -29,13 +29,13 @@ const Footer = () => {
         <div>
           <ul>
             <ul className={style.list}>
-              <a href="#Home">Home</a>
+              <a href="#MongoDB">MongoDB</a>
             </ul>
             <ul className={style.list}>
-              <a href="#AboutUs">AboutUs</a>
+              <a href="#ReactJS">ReactJS</a>
             </ul>
             <ul className={style.list}>
-              <a href="#FAQ">FAQ</a>
+              <a href="#NodeJS">NodeJS</a>
             </ul>
           </ul>
         </div>
