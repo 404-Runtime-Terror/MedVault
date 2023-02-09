@@ -43,6 +43,20 @@ const Login = () => {
     } catch (err) {
       console.error(err);
     }
+  }else{
+    try {
+      const res = await axios.get("https://med-backend-production.up.railway.app/patient/login?", {
+        params: {
+          username: username,
+          password: password
+        }
+      });
+      console.log(res);
+      // if user is valid then redirect to dashboard
+      // Router.push("/dashboard");
+    } catch (err) {
+      console.error(err);
+    }
   }
     }
     // set loading to false so that loader will be hidden
