@@ -1,0 +1,27 @@
+.footer{
+    display:flex;
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 25px;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    justify-content: space-between;
+}
+.verticalLine{
+    content : " ";
+    position: absolute;
+    left:10%;
+    /* left:-123px; */
+    height: 110px;
+    width: 2px;
+    /* border-left: thick solid white; */
+    background-color: #fff;
+}
+.icon{
+    font-size: 30px;
+    margin: 5px;    
+    size:30px;
+    color: #fff;
+}
+
