@@ -123,3 +123,14 @@
   background-color: #f5f5f5;
   color: #000;
 }
+
+.checkbox{
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  width: fit-content !important;
+  height: 15px !important;
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: 0px !important;
+}
