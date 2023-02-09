@@ -16,9 +16,9 @@ const index = () => {
   const [toggle, SetToggle] = React.useState(false);
   return (
     <>
-      {/* <h2>Patient Dashboard</h2> */}
       <PrescriptionForm />
-      {/* <div className={styles.card}>
+      <h2>Patient Dashboard</h2>
+      <div className={styles.card}>
         <MedCard />
       </div>
       <div
@@ -52,8 +52,8 @@ const index = () => {
           <Vaccine />
           <Vaccine />
           <Vaccine />
-        </div> */}
-      {/* </div> */}
+        </div>
+      </div>
     </>
   );
 };

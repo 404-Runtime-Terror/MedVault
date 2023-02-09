@@ -7,6 +7,7 @@ import styles from "./style.module.css";
 const Prescriptionform = (props: any) => {
   return (
     <>
+    <div className={styles.PrescriptionBox}>
       <div className={styles.formContainer}>
         <h1 className={styles.formHeader}>Medical Prescription Form</h1>
 
@@ -19,7 +20,7 @@ const Prescriptionform = (props: any) => {
            <span> Name:</span> <input type="text" name="doctorName" required />
           </li>
         </ul>
-        {/* <hr className={styles.divider}/> */}
+        
 
         <h2 className={styles.info}>Prescription</h2>
         <ul className={styles.description}>
@@ -43,7 +44,7 @@ const Prescriptionform = (props: any) => {
           </li>
         </ul>
         </div>
-            
+        </div>            
     </>
   );
 };
