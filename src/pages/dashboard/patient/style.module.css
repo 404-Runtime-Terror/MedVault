@@ -1,0 +1,67 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.Prescription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background: var(--background-color);
+  margin: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease-in-out;
+}
+
+.Prescription:hover {
+  box-shadow: var(--box-shadow);
+}
+
+.Vaccine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background: var(--background-color);
+  margin: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  border-radius: var(--border-radius);
+}
+
+.Vaccine:hover {
+  box-shadow: var(--box-shadow);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 20px 0;
+  color: white;
+}
+.toggleBtn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  width: 100%;
+  padding: 0 25px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin: 30px;
+}
