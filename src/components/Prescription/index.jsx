@@ -8,11 +8,26 @@ const Prescription = (props) => {
     <>
       <div className={styles.prescriptionBox}>
         <div className={styles.prescriptionHeader}>
-          <h2 style={{ color: "var(--primary-color)" }}>Dr. Stephen Strange</h2>
+          <h2 style={{ color: "var(--primary-color)" }}>
+            {props.prescription.Name
+              ? props.prescription.Name
+              : "Name not found"}
+          </h2>
           <h3 style={{ color: "var(--primary-color)" }}>
-            Fri 30 Jan 2022 12:3:12
+            {props.prescription.Date
+              ? props.prescription.Date
+              : "Date not found"}
           </h3>
-          <h4 className={styles.hosName}>5 Star Hospital</h4>
+          <h4 className={styles.hosName}>
+            {props.prescription.Hospital
+              ? props.prescription.Hospital
+              : "Hospital not found"}
+          </h4>
+          <p>
+            {props.prescription.prescription
+              ? props.prescription.prescription
+              : "Description not found"}
+          </p>
         </div>
         {/* <div className={style.prescriptionBody}>
             <ul className={style.medicine}>

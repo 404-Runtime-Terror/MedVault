@@ -6,19 +6,20 @@ import axios from "axios";
 
 // import icon
 import { FcGoogle } from "react-icons/fc";
-// import { Router } from "next/router";
+import { useRouter } from "next/router";
 
-const Login = () => {
-
+const Login = (props) => {
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
+
+  const router = useRouter();
 
   function handleChange(event) {
     if (event.target.value === "doctor") {
       setType(event.target.value);
     }
     if (type === "doctor") {
-      setType('patient');
+      setType("patient");
     }
   }
   const [type, setType] = React.useState("patient");
@@ -26,18 +27,27 @@ const Login = () => {
     // get request to backend to check if user is valid or not
     // set loading to true so that loader will be shown
     // setIsLoading(true);
-    console.log(username, password, type)
+    console.log(username, password, type);
 
     if (type === "doctor") {
       // send the username and password to backend and check if user is valid or not
       try {
-        const res = await axios.get("https://med-backend-production.up.railway.app/doctor/login?", {
-          params: {
-            username: username,
-            password: password
+        const res = await axios.get(
+          "https://med-backend-production.up.railway.app/doctor/login?",
+          {
+            params: {
+              username: username,
+              password: password,
+            },
           }
-        });
+        );
         console.log(res);
+        if (res.data.isLogin) {
+          props.setuserId(res.data.userID);
+          props.userData({ username: username });
+          router.push("/dashboard/doctor");
+        }
+
         // if user is valid then redirect to dashboard
         // Router.push("/dashboard");
       } catch (err) {
@@ -45,13 +55,22 @@ const Login = () => {
       }
     } else {
       try {
-        const res = await axios.get("https://med-backend-production.up.railway.app/patient/login?", {
-          params: {
-            username: username,
-            password: password
+        const res = await axios.get(
+          "https://med-backend-production.up.railway.app/patient/login?",
+          {
+            params: {
+              username: username,
+              password: password,
+            },
           }
-        });
+        );
         console.log(res);
+        if (res.data.isLogin) {
+          props.setuserId(res.data.userID);
+          // console.log(props.userId);
+          await getpatientData();
+          router.push("/dashboard/patient");
+        }
         // if user is valid then redirect to dashboard
         // Router.push("/dashboard");
       } catch (err) {
@@ -59,6 +78,26 @@ const Login = () => {
       }
     }
   }
+
+  const getpatientData = async () => {
+    console.log(props.userId);
+    try {
+      const res = await axios.get(
+        "https://med-backend-production.up.railway.app/Patient/patientData?",
+        {
+          params: {
+            userID: props.userId,
+          },
+        }
+      );
+      console.log(res);
+      props.setPrescription(res.data);
+
+      // props.setPrescription(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   // set loading to false so that loader will be hidden
   return (
     <>
@@ -76,22 +115,46 @@ const Login = () => {
           <form>
             <h1>Login</h1>
             {/* {type} */}
-            <input type="text" placeholder="Username" onChange={(e) => {
-              setUsername(e.target.value)
-            }} />
-            <input type="password" placeholder="Password" onChange={(e) => {
-              setPassword(e.target.value)
-            }} />
+            <input
+              type="text"
+              placeholder="Username"
+              onChange={(e) => {
+                setUsername(e.target.value);
+              }}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+            />
 
-            <div style={{display:"flex",height:"fit-content",alignItems:"center",justifyContent:"center"}}>
-              <input type="checkbox" value="doctor" onChange={handleChange} className={style.checkbox} />
+            <div
+              style={{
+                display: "flex",
+                height: "fit-content",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <input
+                type="checkbox"
+                value="doctor"
+                onChange={handleChange}
+                className={style.checkbox}
+              />
               <label for="doctor">is Doctor</label>
             </div>
 
-            <Button title="Login" style={{ width: "60%" }} function={(e) => {
-              e.preventDefault();
-              getLogin()
-            }} />
+            <Button
+              title="Login"
+              style={{ width: "60%" }}
+              function={(e) => {
+                e.preventDefault();
+                getLogin();
+              }}
+            />
             <div className="divider" style={{ width: "75%" }}></div>
             <div
               style={{
@@ -103,7 +166,6 @@ const Login = () => {
                 height: "fit-content",
               }}
             >
-
               <button className={`${style.other_login_icon} button`}>
                 {/* // google icon */}
                 <FcGoogle size={"30px"} />

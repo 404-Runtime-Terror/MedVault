@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 // import style
 import style from "./style.module.css";
 
@@ -8,12 +9,60 @@ import { motion } from "framer-motion";
 // import components
 import Button from "../../components/Button";
 
-// import icon
-import { FcGoogle } from "react-icons/fc";
-
 const Signup = () => {
   const [isDoctor, setIsDoctor] = React.useState(true);
 
+  const [name, setName] = React.useState("");
+  const [username, setUsername] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [email, setEmail] = React.useState("");
+
+  async function getSignup() {
+    // get request to backend to check if user is valid or not
+    // set loading to true so that loader will be shown
+    // setIsLoading(true);
+
+    if (isDoctor) {
+      // send the username and password to backend and check if user is valid or not
+      try {
+        const res = await axios.get(
+          "https://med-backend-production.up.railway.app/Doctor/signup?",
+          {
+            params: {
+              name: name,
+              username: username,
+              password: password,
+              email: email,
+            },
+          }
+        );
+        console.log(res);
+        // if user is valid then redirect to dashboard
+        // Router.push("/dashboard");
+      } catch (err) {
+        console.error(err);
+      }
+    } else {
+      try {
+        const res = await axios.get(
+          "https://med-backend-production.up.railway.app/Patient/signup?",
+          {
+            params: {
+              name: name,
+              username: username,
+              password: password,
+              email: email,
+            },
+          }
+        );
+        console.log(res);
+        // if user is valid then redirect to dashboard
+        // Router.push("/dashboard");
+      } catch (err) {
+        console.error(err);
+      }
+    }
+  }
   return (
     <>
       <div className={`${style.signupWrapper} gradient`}>
@@ -30,9 +79,26 @@ const Signup = () => {
             <>
               <form>
                 <h2 style={{ fontSize: "3.2rem" }}>Doctor</h2>
-                <input type="text" placeholder="Name" />
-                <input type="text" placeholder="Username" />
-                <input type="password" placeholder="Password" />
+                <input
+                  type="text"
+                  placeholder="Name"
+                  onChange={(e) => setName(e.target.value)}
+                />
+                <input
+                  type="email"
+                  placeholder="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <input
+                  type="text"
+                  placeholder="Username"
+                  onChange={(e) => setUsername(e.target.value)}
+                />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
                 <Button
                   title="Sign Up"
                   style={{
@@ -40,33 +106,37 @@ const Signup = () => {
                     margin: "25px 0",
                     marginBottom: "12px",
                   }}
-                />
-                <div className="divider" style={{ width: "75%" }}></div>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    flexDirection: "column",
-                    gap: 10,
-                    width: "100%",
-                    height: "fit-content",
+                  function={(e) => {
+                    e.preventDefault();
+                    getSignup();
                   }}
-                >
-                  <button className={`${style.other_login_icon} button`}>
-                    {/* // google icon */}
-                    <FcGoogle size={"30px"} />
-                    <span style={{ marginLeft: 10 }}>Sign Up with Google</span>
-                  </button>
-                </div>
+                />
               </form>
             </>
           ) : (
             <>
               <form>
                 <h2 style={{ fontSize: "3.2rem" }}>Patient</h2>
-                <input type="text" placeholder="Name" />
-                <input type="text" placeholder="Username" />
-                <input type="password" placeholder="Password" />
+                <input
+                  type="text"
+                  placeholder="Name"
+                  onChange={(e) => setName(e.target.value)}
+                />
+                <input
+                  type="email"
+                  placeholder="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <input
+                  type="text"
+                  placeholder="Username"
+                  onChange={(e) => setUsername(e.target.value)}
+                />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
                 <Button
                   title="Sign Up"
                   style={{
@@ -74,24 +144,11 @@ const Signup = () => {
                     margin: "25px 0",
                     marginBottom: "12px",
                   }}
-                />
-                <div className="divider" style={{ width: "75%" }}></div>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    flexDirection: "column",
-                    gap: 10,
-                    width: "100%",
-                    height: "fit-content",
+                  function={(e) => {
+                    e.preventDefault();
+                    getSignup();
                   }}
-                >
-                  <button className={`${style.other_login_icon} button`}>
-                    {/* // google icon */}
-                    <FcGoogle size={"30px"} />
-                    <span style={{ marginLeft: 10 }}>Sign Up with Google</span>
-                  </button>
-                </div>
+                />
               </form>
             </>
           )}
@@ -114,5 +171,4 @@ const Signup = () => {
     </>
   );
 };
-
 export default Signup;

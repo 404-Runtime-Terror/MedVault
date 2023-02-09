@@ -1,7 +1,12 @@
 import Head from "next/head";
+import React from "react";
 import "../styles/globals.css";
 
 export default function App({ Component, pageProps }) {
+  const [userId, setuserId] = React.useState(null);
+  const [userData, setUserData] = React.useState(null);
+  const [prescription, setPrescription] = React.useState(null);
+
   return (
     <>
       <Head>
@@ -23,7 +28,15 @@ export default function App({ Component, pageProps }) {
         <link rel="canonical" href="https://www.healthvault.com/" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Component {...pageProps} />
+      <Component
+        {...pageProps}
+        setuserId={setuserId}
+        userId={userId}
+        prescription={prescription}
+        setPrescription={setPrescription}
+        setUserData={setUserData}
+        userData={userData}
+      />
     </>
   );
 }
