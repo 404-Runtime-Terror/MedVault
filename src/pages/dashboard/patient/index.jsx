@@ -22,7 +22,7 @@ const index = (props) => {
 
       <h2 className={styles.herotitle}>Patient Dashboard</h2>
       <div className={styles.card}>
-        <MedCard qrdata={userQRData} />
+        <MedCard qrdata={userQRData} userData={props.userData} />
       </div>
       <div
         className={styles.toggleBtn}
@@ -42,7 +42,9 @@ const index = (props) => {
           style={{ display: widthSize < 768 ? (toggle ? "none" : "flex") : "" }}
         >
           <h3 className={styles.title}>Prescription</h3>
-          {props.prescription ? (
+          {console.log(props.prescription)}
+
+          {props.prescription === false ? (
             props.prescription.map((prescription) => (
               <Prescription
                 key={prescription._id}

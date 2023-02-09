@@ -36,11 +36,18 @@ const MedCardFront = (props) => {
       </div>
 
       <div className={style.cardContent}>
-        <h3>name : Aniruddha Gawali</h3>
-        <h3>age : 18</h3>
-        <h3>DOB : 1/2/23</h3>
-        <h3>Allergy : none</h3>
-        <h3>blood group :X+</h3>
+        <h3>name : {props.userData.name ? props.userData.name : ""}</h3>
+        <h3>age : {props.userData.age ? props.userData.age : ""}</h3>
+        <h3>
+          DOB : {props.userData.dateofbirth ? props.userData.dateofbirth : ""}
+        </h3>
+        <h3>
+          Allergy : {props.userData.allergies ? props.userData.allergies : ""}
+        </h3>
+        <h3>
+          blood group :{" "}
+          {props.userData.bloodgroup ? props.userData.bloodgroup : ""}
+        </h3>
       </div>
 
       <div className={style.button}>
@@ -112,7 +119,10 @@ const MedCard = (props) => {
           className={style.cardWrapper}
           style={{ display: isCardFlip ? "none" : "flex" }}
         >
-          <MedCardFront setIsCardFlip={setIsCardFlip} />
+          <MedCardFront
+            setIsCardFlip={setIsCardFlip}
+            userData={props.userData}
+          />
         </div>
 
         <div
