@@ -57,6 +57,11 @@ const MedCardFront = (props) => {
 };
 
 const MedCardBack = (props) => {
+  const [isEditAllowed, setIsEditAllowed] = React.useState(false);
+  const [qrData, setQrData] = React.useState({
+    id: props.qrdata,
+    isEditAllowed: isEditAllowed,
+  });
   return (
     <>
       <span className={style.backgroundText}>Healt Vault</span>
@@ -65,8 +70,12 @@ const MedCardBack = (props) => {
       <div className={style.logo}>
         <div className={style.profileImg}>
           <div style={{ width: "50%", borderRadius: 10 }}>
-            <QRcode value={"123"} />
+            <QRcode value={JSON.stringify(qrData)} />
           </div>
+        </div>
+        <div className={style.permisstion}>
+          <input type="checkbox" value={isEditAllowed} />
+          <label htmlFor="">Allow to Edit</label>
         </div>
       </div>
       <div className={style.cardContent}>
@@ -91,6 +100,8 @@ const MedCardBack = (props) => {
 const MedCard = (props) => {
   const [isCardFlip, setIsCardFlip] = React.useState(false);
 
+  const [qrdata, setQrdata] = React.useState(props.qrdata);
+
   return (
     <>
       <div
@@ -110,7 +121,7 @@ const MedCard = (props) => {
             display: isCardFlip ? "flex" : "none",
           }}
         >
-          <MedCardBack setIsCardFlip={setIsCardFlip} />
+          <MedCardBack setIsCardFlip={setIsCardFlip} qrdata={qrdata} />
         </div>
       </div>
     </>

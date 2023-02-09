@@ -160,6 +160,20 @@
   text-transform: capitalize;
 }
 
+.permisstion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-transform: capitalize;
+}
+
+.permisstion label {
+  margin-left: 5px;
+}
+
 @media screen and (max-width: 768px) {
   .cardWrapper {
     width: 500px;
