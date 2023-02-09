@@ -1,0 +1,77 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.formHeader {
+  margin: 2px 0;
+  padding: 10px 20px;
+  font-size: 250%;
+  font-weight: 800;
+  border-radius: var(--border-radius);
+  color: #fff;
+}
+.PrescriptionBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    width: 50%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(
+        105deg,
+        rgba(0, 51, 102, 1) 0%,
+        rgba(47, 143, 138, 1) 100%
+      );
+    border-radius: var(--border-radius);
+}
+
+.info {
+  font-size: 175%;
+  margin: 20px 0 0 0;
+}
+
+.info {
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.submit {
+    display: flex;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+}
+.description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.description li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+    list-style: none;
+}
+.description li span {
+    margin: 5px;
+    color: #fff;
+}
+.description li input {
+  padding: 5px;
+    font-size: x-large;
+  border: solid 2px var(--secondary-color);
+  border-radius: var(--border-radius);
+  outline: none;
+}
+.description li textarea {
+  font-size: x-large;
+  border: solid 2px var(--secondary-color);
+  border-radius: var(--border-radius);
+}

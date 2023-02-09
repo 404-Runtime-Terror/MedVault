@@ -7,7 +7,6 @@ const Prescription = (props) => {
   return (
     <>
       <div className={styles.prescriptionBox}>
-        <div className={styles.boxBorder}></div>
         <div className={styles.prescriptionHeader}>
           <h2 style={{ color: "var(--primary-color)" }}>Dr. Stephen Strange</h2>
           <h3 style={{ color: "var(--primary-color)" }}>
