@@ -16,12 +16,12 @@ const Footer = () => {
         <footer className={style.footer}>
             <div>
             <ul>
-            <li className={style.list}><a href="#Home">Home</a></li>
-                    <li className={style.list}><a href="#Aboutus">Aboutus</a></li>
-                    <li  className={style.list}><a href="#FAQ">FAQ</a></li>
+            <ul className={style.list}><a href="#Home">Home</a></ul>
+                    <ul className={style.list}><a href="#AboutUs">AboutUs</a></ul>
+                    <ul  className={style.list}><a href="#FAQ">FAQ</a></ul>
                 </ul>
             </div>
-            <div>
+            <div style={{display:"flex",alignItems:"center",justifyContent:"flex-end"}}>
                 <DiMongodb className={style.icon} /> 
                 <DiReact className={style.icon} /> 
                 <DiNodejsSmall className={style.icon} />
@@ -29,8 +29,7 @@ const Footer = () => {
             <div className={style.verticalLine}>
                 <p></p>
             </div>
-            <div>Mongodb</div>
-        
+            <div className={style.logo}> </div>
         </footer>
     );
     };
