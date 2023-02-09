@@ -1,18 +1,4 @@
-.formContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.formHeader {
-  margin: 2px 0;
-  padding: 10px 20px;
-  font-size: 250%;
-  font-weight: 800;
-  border-radius: var(--border-radius);
-  color: #fff;
-}
-.PrescriptionBox{
+.NewUserBox{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,25 +13,21 @@
       );
     border-radius: var(--border-radius);
 }
-
-.info {
-  font-size: 175%;
-  margin: 20px 0 0 0;
-}
-
-.info {
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-}
-
-.submit {
+.formContainer {
     display: flex;
-    padding: 15px;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.description {
+  }
+  .formHeader {
+    margin: 2px 0;
+    padding: 10px 20px;
+    font-size: 250%;
+    font-weight: 800;
+    border-radius: var(--border-radius);
+    color: #fff;
+  }
+  .description {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,7 +47,7 @@
 }
 .description li input {
   padding: 5px;
-  font-size: x-large;
+    font-size: x-large;
   border: solid 2px var(--secondary-color);
   border-radius: var(--border-radius);
   outline: none;
@@ -75,14 +57,27 @@
   border: solid 2px var(--secondary-color);
   border-radius: var(--border-radius);
 }
-.description li option {
-  padding: 20px;
-  font-size: x-large;
-  border: solid 2px var(--secondary-color);
-  border: solid 2px var(--secondary-color);
-  border-radius: var(--border-radius);
+
+.description li select {
+    appearance: none;
+    background-image: none;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    font-size: x-large;
+    border: solid 2px var(--secondary-color);
+    border-radius: var(--border-radius);
+    outline: none;
+
 }
-/* .description li select:focus {
-  min-width: 150px;
-  width: auto;
-} */
+ 
+.select {
+    position: relative;
+    display: block;
+    width: 15em;
+    height: 2em;
+    line-height: 3;
+    overflow: hidden;
+    border-radius: .25em;
+    padding-bottom: 10px;
+}

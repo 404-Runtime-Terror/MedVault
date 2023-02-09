@@ -1,7 +1,9 @@
+
 // import React from "react";
 // import styles from "./style.module.css";
 // import Navbar from "../../../components/Navbar";
 // import QRScanner from "../../../components/QRScanner";
+
 
 // const Doctor = () => {
 //   const [result, setResult] = React.useState("No result");
