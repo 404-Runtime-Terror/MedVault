@@ -3,7 +3,6 @@ import Prescription from "../../../components/Prescription";
 import Vaccine from "../../../components/Vaccine";
 import MedCard from "../../../components/MedCard";
 import Button from "../../../components/Button";
-import QRCode from "../../../components/QRCode";
 
 // import useScreenWidth from "@/hooks/useScreenWidth";
 import useScreenWidth from "../../../hook/useScreenWidth";
@@ -19,7 +18,6 @@ const index = () => {
       <h2>Patient Dashboard</h2>
       <div className={styles.card}>
         <MedCard />
-        <QRCode />
       </div>
       <div
         className={styles.toggleBtn}

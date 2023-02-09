@@ -8,6 +8,7 @@ import { MdOutlineQrCodeScanner } from "react-icons/md";
 
 // Components
 import Button from "../Button";
+import QRcode from "../QRCode";
 
 const MedCardFront = (props) => {
   return (
@@ -63,12 +64,9 @@ const MedCardBack = (props) => {
       <div className={style.corners2}></div>
       <div className={style.logo}>
         <div className={style.profileImg}>
-          <img
-            src="/MedCard/qr.png"
-            alt=""
-            width={160}
-            style={{ zIndex: 2, border: "2px solid black" }}
-          />
+          <div style={{ width: "50%", borderRadius: 10 }}>
+            <QRcode value={"123"} />
+          </div>
         </div>
       </div>
       <div className={style.cardContent}>

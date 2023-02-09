@@ -12,7 +12,7 @@
   justify-content: space-between;
   align-items: center;
   width: 650px;
-  height: 53vh;
+  aspect-ratio: 4/2.5;
   max-height: 500px;
   background-color: #fff;
   border-radius: 10px;
@@ -162,4 +162,20 @@
   font-weight: 600;
   color: var(--primary-color);
   text-transform: capitalize;
+}
+
+@media screen and (max-width: 768px) {
+  .cardWrapper {
+    width: 500px;
+  }
+}
+@media screen and (max-width: 530px) {
+  .cardWrapper {
+    transform: scale(0.8);
+  }
+}
+@media screen and (max-width: 530px) {
+  .cardWrapper {
+    transform: scale(0.8);
+  }
 }
