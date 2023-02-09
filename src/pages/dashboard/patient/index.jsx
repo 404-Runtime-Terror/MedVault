@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Prescription from "../../../components/Prescription";
 import Vaccine from "../../../components/Vaccine";
 import MedCard from "../../../components/MedCard";
@@ -11,10 +11,11 @@ import useScreenWidth from "../../../hook/useScreenWidth";
 // import style
 import styles from "./style.module.css";
 
-const index = () => {
+const index = (props) => {
   const widthSize = useScreenWidth();
   const [toggle, SetToggle] = React.useState(false);
-  const [userQRData, setUserQRData] = React.useState("123");
+  const [userQRData, setUserQRData] = React.useState(props.userId);
+
   return (
     <>
       <Navbar />
@@ -41,11 +42,16 @@ const index = () => {
           style={{ display: widthSize < 768 ? (toggle ? "none" : "flex") : "" }}
         >
           <h3 className={styles.title}>Prescription</h3>
-          <Prescription />
-          <Prescription />
-          <Prescription />
-          <Prescription />
-          <Prescription />
+          {props.prescription ? (
+            props.prescription.map((prescription) => (
+              <Prescription
+                key={prescription._id}
+                prescription={prescription}
+              />
+            ))
+          ) : (
+            <h3>No Prescription</h3>
+          )}
         </div>
         <div
           className={styles.Vaccine}
