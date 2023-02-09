@@ -12,42 +12,45 @@ const Footer = () => {
   //    }
   return (
     <footer className={style.footer}>
-        <div className={style.footerLeft}>
-            <div className={style.logo}>
-                <img src="/logo.png" alt="img" />
-            </div>
-            
-            <div className={style.Foot}>Health Vault</div>
-            
-      </div>
-      <div>
-        <ul>
-          <ul className={style.list}>
-            <a href="#Home">Home</a>
-          </ul>
-          <ul className={style.list}>
-            <a href="#AboutUs">AboutUs</a>
-          </ul>
-          <ul className={style.list}>
-            <a href="#FAQ">FAQ</a>
-          </ul>
-        </ul>
-      </div>
+      <div className={style.footerLeft}>
+        <div className={style.logo}>
+          <img src="/logo.png" alt="img" />
+        </div>
 
+        <div className={style.Foot}>Health Vault</div>
+      </div>
       <div
         style={{
           display: "flex",
+          justifyContent: "center",
           alignItems: "center",
-          justifyContent: "flex-end",
         }}
       >
-        <DiMongodb className={style.icon} />
-        <DiReact className={style.icon} />
-        <DiNodejsSmall className={style.icon} />
-      </div>
+        <div>
+          <ul>
+            <ul className={style.list}>
+              <a href="#Home">Home</a>
+            </ul>
+            <ul className={style.list}>
+              <a href="#AboutUs">AboutUs</a>
+            </ul>
+            <ul className={style.list}>
+              <a href="#FAQ">FAQ</a>
+            </ul>
+          </ul>
+        </div>
 
-      <div className={style.verticalLine}>
-        <p></p>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-end",
+          }}
+        >
+          <DiMongodb className={style.icon} />
+          <DiReact className={style.icon} />
+          <DiNodejsSmall className={style.icon} />
+        </div>
       </div>
     </footer>
   );
