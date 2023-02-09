@@ -27,11 +27,6 @@
     font-size: 1.2rem;
     color: var(--primary-color)
 }
-@media screen and (min-width:1171px){
-    .logo{
-        left:-90px;
-    }
-}
 .logo{
     height: 500px;
     position: relative;
