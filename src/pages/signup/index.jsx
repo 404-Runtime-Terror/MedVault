@@ -42,6 +42,25 @@ const Signup = () => {
       } catch (err) {
         console.error(err);
       }
+    } else {
+      try {
+        const res = await axios.get(
+          "https://med-backend-production.up.railway.app/Patient/signup?",
+          {
+            params: {
+              name: name,
+              username: username,
+              password: password,
+              email: email,
+            },
+          }
+        );
+        console.log(res);
+        // if user is valid then redirect to dashboard
+        // Router.push("/dashboard");
+      } catch (err) {
+        console.error(err);
+      }
     }
   }
   return (
@@ -98,16 +117,36 @@ const Signup = () => {
             <>
               <form>
                 <h2 style={{ fontSize: "3.2rem" }}>Patient</h2>
-                <input type="text" placeholder="Name" />
-                <input type="email" placeholder="email" />
-                <input type="text" placeholder="Username" />
-                <input type="password" placeholder="Password" />
+                <input
+                  type="text"
+                  placeholder="Name"
+                  onChange={(e) => setName(e.target.value)}
+                />
+                <input
+                  type="email"
+                  placeholder="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <input
+                  type="text"
+                  placeholder="Username"
+                  onChange={(e) => setUsername(e.target.value)}
+                />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
                 <Button
                   title="Sign Up"
                   style={{
                     width: "60%",
                     margin: "25px 0",
                     marginBottom: "12px",
+                  }}
+                  function={(e) => {
+                    e.preventDefault();
+                    getSignup();
                   }}
                 />
               </form>
