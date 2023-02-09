@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+
+import { useRouter } from "next/router";
 // import style
 import style from "./style.module.css";
 
@@ -9,13 +11,15 @@ import { motion } from "framer-motion";
 // import components
 import Button from "../../components/Button";
 
-const Signup = () => {
+const Signup = (props) => {
   const [isDoctor, setIsDoctor] = React.useState(true);
 
   const [name, setName] = React.useState("");
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [email, setEmail] = React.useState("");
+
+  const router = useRouter();
 
   async function getSignup() {
     // get request to backend to check if user is valid or not
@@ -37,6 +41,7 @@ const Signup = () => {
           }
         );
         console.log(res);
+
         // if user is valid then redirect to dashboard
         // Router.push("/dashboard");
       } catch (err) {
@@ -55,7 +60,9 @@ const Signup = () => {
             },
           }
         );
+        props.setuserId(res.data.userID);
         console.log(res);
+        router.push("/userinfo");
         // if user is valid then redirect to dashboard
         // Router.push("/dashboard");
       } catch (err) {
