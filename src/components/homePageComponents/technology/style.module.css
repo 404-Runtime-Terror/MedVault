@@ -1,0 +1,65 @@
+.mainDiv {
+    display: flex;
+    margin-top: 100px;
+}
+
+.info {
+    width: 50%;
+    padding: 20px;
+    height: 100%;
+}
+
+.technology {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    background: linear-gradient(
+        105deg,
+        rgba(0, 51, 102, 1) 0%,
+        rgba(47, 143, 138, 1) 100%
+  );
+  border-radius: var(--border-radius);
+}
+
+.secondDiv {
+    width: 90%;
+    height: 90%;
+    background-color: var(--tertiary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    padding-left: 10px;
+    gap: 40px;
+    font-family: var(--font-1);
+}
+
+.icon {
+    scale: 2;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+    gap: 15px;
+}
+.appName{
+    display: flex;
+    margin:-15px 10px;
+    letter-spacing: 1px;
+}
+.list{
+    padding: 10px;
+    font-weight: 400;
+    text-align-last: justify;
+    /* margin: -40px 5px 10px 0px; */
+}
