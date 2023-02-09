@@ -10,7 +10,6 @@ import { useRef } from "react";
 const navbar = () => {
     // const displaydiv = () => {
     const [display, setDisplay] = React.useState(false);
-    blur = 0;
     // }
     const Home = useRef(null);
     const AboutUs = useRef(null);
@@ -32,7 +31,7 @@ const navbar = () => {
                     <li onClick={() => scrollTo(AboutUs)} className={style.list}><a href="#Aboutus">Aboutus</a></li>
                     <li onClick={() => scrollTo(Question)} className={style.list}><a href="#FAQ">FAQ</a></li>
                     <li onClick={()=>{display === false ? setDisplay(true): setDisplay(false)
-                                    display=== false ? blur =0 : blur = "5px"}}className={style.list}><a href="#helpline">Helpline</a></li>
+                                    }}className={style.list}><a href="#helpline">Helpline</a></li>
                 </ul>
             </div>
                 
