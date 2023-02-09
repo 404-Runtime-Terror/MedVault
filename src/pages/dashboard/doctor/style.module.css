@@ -43,3 +43,27 @@
   margin-left: 30px;
   width: 50%;
 }
+
+.pop {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  height: 70vh;
+  width: 80%;
+  border-radius: 20px;
+}
+
+.cross {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+}
