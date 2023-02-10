@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./style.module.css";
 import Navbar from "../../../components/Navbar";
 import QRScanner from "../../../components/QRScanner";
@@ -9,28 +9,17 @@ import { DataGrid } from "@mui/x-data-grid";
 import { RxCross2 } from "react-icons/rx";
 import { style } from "@mui/system";
 
-const Doctor = () => {
+const Doctor = (props) => {
   const [result, setResult] = React.useState("No result");
   const [isQRScannerOpen, setIsQRScannerOpen] = React.useState(false);
   const [selected, setSelected] = React.useState("No result");
   const [open, setOpen] = React.useState(false);
 
-  const rows = [
-    { id: 1, lastName: "Snow", firstName: "Jon", age: 35 },
-    { id: 2, lastName: "Lannister", firstName: "Cersei", age: 42 },
-    { id: 3, lastName: "Lannister", firstName: "Jaime", age: 45 },
-    { id: 4, lastName: "Stark", firstName: "Arya", age: 16 },
-    { id: 5, lastName: "Targaryen", firstName: "Daenerys", age: null },
-    { id: 6, lastName: "Melisandre", firstName: null, age: 150 },
-    { id: 7, lastName: "Clifford", firstName: "Ferrara", age: 44 },
-    { id: 8, lastName: "Frances", firstName: "Rossini", age: 36 },
-    { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
-  ];
+  const rows = [{ id: 1, fullname: "Snow", age: 35 }];
 
   const columns = [
     { field: "id", headerName: "ID", width: 70 },
-    { field: "firstName", headerName: "First name", width: 130 },
-    { field: "lastName", headerName: "Last name", width: 130 },
+    { field: "fullname", headerName: "Full name", width: 130 },
     {
       field: "age",
       headerName: "Age",
@@ -55,6 +44,18 @@ const Doctor = () => {
       ),
     },
   ];
+
+  useEffect(() => {
+    console.log(props.keys);
+    props.keys.props.map(async (key) => {
+      const res = await fetch(
+        `https://med-backend-production.up.railway.app/convert?=${key}`
+      );
+      const data = await res.json();
+      console.log(data);
+      // rows.push(key);
+    });
+  }, []);
 
   return (
     <>
@@ -115,7 +116,7 @@ const Doctor = () => {
           onClick={() => setOpen(false)}
           className={styles.cross}
         />
-        <h1>{selected.id}</h1>
+        <h1>{selected}</h1>
       </div>
 
       <br />
@@ -126,13 +127,3 @@ const Doctor = () => {
 };
 
 export default Doctor;
-
-// const doctor = () => {
-//   return (
-//     <div>
-//       <h1>Doctor</h1>
-//     </div>
-//   );
-// };
-
-// export default doctor;

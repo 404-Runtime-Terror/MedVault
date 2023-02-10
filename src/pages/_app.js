@@ -6,6 +6,7 @@ export default function App({ Component, pageProps }) {
   const [userId, setuserId] = React.useState(null);
   const [userData, setUserData] = React.useState(null);
   const [prescription, setPrescription] = React.useState(null);
+  const [keys, setKeys] = React.useState(null);
 
   return (
     <>
@@ -36,6 +37,8 @@ export default function App({ Component, pageProps }) {
         setPrescription={setPrescription}
         setUserData={setUserData}
         userData={userData}
+        keys={keys}
+        setKeys={setKeys}
       />
     </>
   );

@@ -58,6 +58,7 @@
   height: 70vh;
   width: 80%;
   border-radius: 20px;
+  z-index: 100;
 }
 
 .cross {

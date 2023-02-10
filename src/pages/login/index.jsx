@@ -44,8 +44,10 @@ const Login = (props) => {
         console.log(res);
         if (res.data.isLogin) {
           props.setuserId(res.data.userID);
-          props.userData({ username: username });
-          router.push("/dashboard/doctor");
+          await getDoctoreData();
+          if (props.keys != null) {
+            router.push("/dashboard/doctor");
+          }
         }
 
         // if user is valid then redirect to dashboard
@@ -64,6 +66,7 @@ const Login = (props) => {
             },
           }
         );
+
         console.log(res);
         if (res.data.isLogin) {
           props.setuserId(res.data.userID);
@@ -71,6 +74,7 @@ const Login = (props) => {
           await getpatientData();
           router.push("/dashboard/patient");
         }
+
         // if user is valid then redirect to dashboard
         // Router.push("/dashboard");
       } catch (err) {
@@ -78,6 +82,24 @@ const Login = (props) => {
       }
     }
   }
+
+  const getDoctoreData = async () => {
+    console.log(props.userId);
+    try {
+      const res = await axios.get(
+        "https://med-backend-production.up.railway.app/Doctor/keys?",
+        {
+          params: {
+            userID: props.userId,
+          },
+        }
+      );
+      // console.log(res);
+      props.setKeys(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const getpatientData = async () => {
     console.log(props.userId);
