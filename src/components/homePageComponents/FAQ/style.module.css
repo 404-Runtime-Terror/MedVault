@@ -9,9 +9,18 @@
 .title{
     font-size: 50px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: var(--primary-color);
     text-align: center;
     margin-bottom: 40px;
+    background:  linear-gradient(
+        105deg,
+        rgba(0, 51, 102, 1) 0%,
+        rgba(47, 143, 138, 1) 100%
+  );
+  margin-bottom: 8px;
+  padding-top: 9px;
+  background-clip: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .layout {
     display: flex;
