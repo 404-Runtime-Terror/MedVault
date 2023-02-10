@@ -6,6 +6,8 @@ import { useRouter } from "next/router";
 import NewUser from "../../components/NewUser";
 import axios from "axios";
 
+import { ToastContainer, toast } from "react-toastify";
+
 const UserInfo = (props) => {
   const [age, setAge] = React.useState("");
   const [dob, setDob] = React.useState("");
@@ -31,6 +33,7 @@ const UserInfo = (props) => {
         }
       );
       console.log(res);
+      toast.success("Login Successful");
       router.push("/dashboard/patient");
     } catch (err) {
       console.log(err);
@@ -48,6 +51,7 @@ const UserInfo = (props) => {
           handleSubmit={handleSubmit}
         />
       </div>
+      <ToastContainer />
     </>
   );
 };

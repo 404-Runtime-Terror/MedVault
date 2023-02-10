@@ -11,6 +11,8 @@ import { motion } from "framer-motion";
 // import components
 import Button from "../../components/Button";
 
+import { ToastContainer, toast } from "react-toastify";
+
 const Signup = (props) => {
   const [isDoctor, setIsDoctor] = React.useState(true);
 
@@ -41,6 +43,8 @@ const Signup = (props) => {
           }
         );
         console.log(res);
+        toast.success("Login Successful");
+        router.push("/");
 
         // if user is valid then redirect to dashboard
         // Router.push("/dashboard");
@@ -62,6 +66,7 @@ const Signup = (props) => {
         );
         props.setuserId(res.data.userID);
         console.log(res);
+        toast.success("Login Successful");
         router.push("/userinfo");
         // if user is valid then redirect to dashboard
         // Router.push("/dashboard");
@@ -175,6 +180,7 @@ const Signup = (props) => {
           )}
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 };

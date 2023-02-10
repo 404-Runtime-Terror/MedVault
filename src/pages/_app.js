@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import "../styles/globals.css";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function App({ Component, pageProps }) {
   const [userId, setuserId] = React.useState(null);

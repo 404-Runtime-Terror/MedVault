@@ -4,6 +4,8 @@ import React from "react";
 import style from "./style.module.css";
 import axios from "axios";
 
+import { ToastContainer, toast } from "react-toastify";
+
 // import icon
 import { FcGoogle } from "react-icons/fc";
 import { useRouter } from "next/router";
@@ -47,6 +49,7 @@ const Login = (props) => {
           await getDoctoreData();
           if (props.keys != null) {
             props.setIsDoctor(true);
+            toast.success("Login Successful");
             router.push("/dashboard/doctor");
           }
         }
@@ -55,6 +58,7 @@ const Login = (props) => {
         // Router.push("/dashboard");
       } catch (err) {
         console.error(err);
+        toast.error("Login Unsuccessful");
       }
     } else {
       try {
@@ -74,6 +78,7 @@ const Login = (props) => {
           // console.log(props.userId);
           await getpatientData();
           props.setIsDoctor(false);
+          toast.success("Login Successful");
           router.push("/dashboard/patient");
         }
 
@@ -81,6 +86,7 @@ const Login = (props) => {
         // Router.push("/dashboard");
       } catch (err) {
         console.error(err);
+        toast.error("Login Unsuccessful");
       }
     }
   }
@@ -208,6 +214,7 @@ const Login = (props) => {
           </form>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 };
