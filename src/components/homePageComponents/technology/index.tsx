@@ -30,9 +30,9 @@ const technology = () => {
         <>
             <div className={style.mainDiv}>
                 <div className={style.info}>
-                    <h1 className={style.title}>What we use</h1>
-                    <div>
-                        <h2>Features</h2>
+                    <h1 className={style.title}><span>Features</span></h1>
+                    <div className={style.features}>
+                        <ul>
                         <li>
                             Secure storage and access to medical records including lab results, prescription history, and doctor's notes.
                         </li>
@@ -48,7 +48,7 @@ const technology = () => {
                         <li>
                         Search medical records by date for patients, and by patient for healthcare providers.
                         </li>
-                        <li>Complete KYC with inputs including degree, certificate, and photo for healthcare providers.</li>
+                        </ul>
                     </div>
                 </div>
                 <div className={style.info}>

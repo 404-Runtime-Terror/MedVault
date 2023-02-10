@@ -62,6 +62,85 @@
 .list{
     padding: 10px;
     font-weight: 400;
-    text-align-last: justify;
+    background:  linear-gradient(
+        105deg,
+        rgba(0, 51, 102, 1) 0%,
+        rgba(47, 143, 138, 1) 100%
+  );
+  margin-bottom: 8px;
+  background-clip: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    /* text-align-last: justify; */
     /* margin: -40px 5px 10px 0px; */
 }
+.features li{
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: var(--font-1);
+    font-weight: 400;
+    color: var(--tertiary-color);
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    background: linear-gradient(
+        105deg,
+        rgba(0, 51, 102, 1) 0%,
+        rgba(47, 143, 138, 1) 100%
+  );
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.title{
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: var(--font-1);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4p var(--tertiary-color);
+    background:  linear-gradient(
+        105deg,
+        rgba(0, 51, 102, 1) 0%,
+        rgba(47, 143, 138, 1) 100%
+  );
+  margin-bottom: 8px;
+  background-clip: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.features li {
+    position: relative;
+    display: inline-block;
+    font-size: 1.2rem;
+    color: #fff;
+    /* text-transform: uppercase; */
+    animation: flip 10s infinite;
+    animation-delay: calc(.2s * var(--i))
+  }
+@keyframes flip {
+    0%,80% {
+      transform: rotateY(360deg) 
+}
+}
+    /* border-radius: 1em;
+    perspective: 600px;
+    box-shadow:
+      0 0.125em 0.3125em rgba(0, 0, 0, 0.25),
+      0 0.02125em 0.06125em rgba(0, 0, 0, 0.25);
+}
+    .features li::before {
+      border-radius: 0 0 1em 1em;
+      width: 100%;
+      height: 50%;
+      transform-origin: center top;
+      transform: rotateX(180deg);
+      background: #333232
+        linear-gradient(180deg,
+                        rgba(0, 0, 0, 0.1) 50%,
+                        rgba(0, 0, 0, 0.4));
+      transition: 0.7s ease-in-out transform;
+    }
+  
+.features li:hover::before {
+      transform: rotateX(0);
+    } */
+  
