@@ -27,7 +27,7 @@ const Footer = () => {
         }}
       >
         <div>
-          <ul>
+          <ul style={{ display: "flex" }}>
             <ul className={style.list}>
               <a href="#MongoDB">React Icons</a>
             </ul>
