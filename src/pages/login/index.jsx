@@ -46,6 +46,7 @@ const Login = (props) => {
           props.setuserId(res.data.userID);
           await getDoctoreData();
           if (props.keys != null) {
+            props.setIsDoctor(true);
             router.push("/dashboard/doctor");
           }
         }
@@ -72,6 +73,7 @@ const Login = (props) => {
           props.setuserId(res.data.userID);
           // console.log(props.userId);
           await getpatientData();
+          props.setIsDoctor(false);
           router.push("/dashboard/patient");
         }
 
@@ -134,7 +136,6 @@ const Login = (props) => {
   // set loading to false so that loader will be hidden
   return (
     <>
-      {type}
       <div className={`${style.loginWrapper} gradient`}>
         <div className={style.loginLeft}>
           <div className={style.quote}>

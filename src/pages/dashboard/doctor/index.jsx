@@ -7,7 +7,6 @@ import Button from "../../../components/Button";
 import { DataGrid } from "@mui/x-data-grid";
 
 import { RxCross2 } from "react-icons/rx";
-import { style } from "@mui/system";
 
 const Doctor = (props) => {
   const [result, setResult] = React.useState("No result");
@@ -15,7 +14,22 @@ const Doctor = (props) => {
   const [selected, setSelected] = React.useState("No result");
   const [open, setOpen] = React.useState(false);
 
-  const rows = [{ id: 1, fullname: "Snow", age: 35 }];
+  const rows = [
+    {
+      id: 1,
+      fullname: "patient1",
+      age: 35,
+      Prescription: "ColdFlew ,Dolo,Crosin",
+      date: "9-9-2023",
+    },
+    {
+      id: 2,
+      fullname: "patient2",
+      age: 35,
+      Prescription: "ColdFlew ,Dolo,Crosin",
+      date: "9-9-2023",
+    },
+  ];
 
   const columns = [
     { field: "id", headerName: "ID", width: 70 },
@@ -45,21 +59,9 @@ const Doctor = (props) => {
     },
   ];
 
-  useEffect(() => {
-    console.log(props.keys);
-    props.keys.props.map(async (key) => {
-      const res = await fetch(
-        `https://med-backend-production.up.railway.app/convert?=${key}`
-      );
-      const data = await res.json();
-      console.log(data);
-      // rows.push(key);
-    });
-  }, []);
-
   return (
     <>
-      <Navbar />
+      <Navbar isDoctor={props.isDoctor} />
       <h1 className={styles.herotitle}>Doctor Dashboard</h1>
       <div
         style={{
@@ -116,7 +118,12 @@ const Doctor = (props) => {
           onClick={() => setOpen(false)}
           className={styles.cross}
         />
-        <h1>{selected}</h1>
+        <h1>Prescription</h1>
+        <br />
+        <h2>{selected.fullname}</h2>
+        <h3>{selected.date}</h3>
+        <h3>{selected.age}</h3>
+        <h3>{selected.Prescription}</h3>
       </div>
 
       <br />

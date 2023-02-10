@@ -18,7 +18,7 @@ const index = (props) => {
 
   return (
     <>
-      <Navbar />
+      <Navbar isDoctor={props.isDoctor} />
       {props.userData === null ? (
         <h1>Loading</h1>
       ) : (
@@ -50,14 +50,14 @@ const index = (props) => {
               {console.log(props.prescription)}
 
               {props.prescription === false ? (
+                <h3>No Prescription</h3>
+              ) : (
                 props.prescription.map((prescription) => (
                   <Prescription
                     key={prescription._id}
                     prescription={prescription}
                   />
                 ))
-              ) : (
-                <h3>No Prescription</h3>
               )}
             </div>
             <div
@@ -67,10 +67,6 @@ const index = (props) => {
               }}
             >
               <h3 className={styles.title}>Vaccine</h3>
-              <Vaccine />
-              <Vaccine />
-              <Vaccine />
-              <Vaccine />
               <Vaccine />
             </div>
           </div>

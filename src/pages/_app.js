@@ -7,6 +7,7 @@ export default function App({ Component, pageProps }) {
   const [userData, setUserData] = React.useState(null);
   const [prescription, setPrescription] = React.useState(null);
   const [keys, setKeys] = React.useState(null);
+  const [isDoctor, setIsDoctor] = React.useState(false);
 
   return (
     <>
@@ -39,6 +40,8 @@ export default function App({ Component, pageProps }) {
         userData={userData}
         keys={keys}
         setKeys={setKeys}
+        setIsDoctor={setIsDoctor}
+        isDoctor={isDoctor}
       />
     </>
   );
