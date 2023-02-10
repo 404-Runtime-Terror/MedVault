@@ -2,10 +2,10 @@
     position: fixed;
     padding: 10px;
     border-radius: var(--border-radius);
-    top: 30%;
+    top: 20%;
     left: 30%;
-    height: 50vh;
-    width: 30vw;
+    height: 60vh;
+    width: 40vw;
     background-color:white ;
     overflow: auto;
 }
@@ -19,6 +19,19 @@
     padding: 10px;
     align-content: center;
     justify-content: center;
+}
+.list li{
+    list-style: none;
+    padding: 10px;
+    font-weight: 400;
+    background:  linear-gradient(
+        105deg,
+        rgba(0, 51, 102, 1) 0%,
+        rgba(47, 143, 138, 1) 100%
+  );
+    border-radius: var(--border-radius);
+    color: white;
+    margin: 10px;
 }
 .title{
     display: flex;
