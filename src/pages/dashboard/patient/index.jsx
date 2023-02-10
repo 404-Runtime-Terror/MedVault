@@ -19,52 +19,63 @@ const index = (props) => {
   return (
     <>
       <Navbar />
+      {props.userData === null ? (
+        <h1>Loading</h1>
+      ) : (
+        <>
+          <h2 className={styles.herotitle}>Patient Dashboard</h2>
+          <div className={styles.card}>
+            <MedCard qrdata={userQRData} userData={props.userData} />
+          </div>
+          <div
+            className={styles.toggleBtn}
+            style={{ display: widthSize < 768 ? "flex" : "none" }}
+          >
+            <Button
+              title={toggle ? "Prescription" : "Vaccine"}
+              function={() => SetToggle(!toggle)}
+            />
+          </div>
 
-      <h2 className={styles.herotitle}>Patient Dashboard</h2>
-      <div className={styles.card}>
-        <MedCard qrdata={userQRData} />
-      </div>
-      <div
-        className={styles.toggleBtn}
-        style={{ display: widthSize < 768 ? "flex" : "none" }}
-      >
-        <Button
-          title={toggle ? "Prescription" : "Vaccine"}
-          function={() => SetToggle(!toggle)}
-        />
-      </div>
+          <br />
+          <br />
+          <div className={styles.main}>
+            <div
+              className={styles.Prescription}
+              style={{
+                display: widthSize < 768 ? (toggle ? "none" : "flex") : "",
+              }}
+            >
+              <h3 className={styles.title}>Prescription</h3>
+              {console.log(props.prescription)}
 
-      <br />
-      <br />
-      <div className={styles.main}>
-        <div
-          className={styles.Prescription}
-          style={{ display: widthSize < 768 ? (toggle ? "none" : "flex") : "" }}
-        >
-          <h3 className={styles.title}>Prescription</h3>
-          {props.prescription ? (
-            props.prescription.map((prescription) => (
-              <Prescription
-                key={prescription._id}
-                prescription={prescription}
-              />
-            ))
-          ) : (
-            <h3>No Prescription</h3>
-          )}
-        </div>
-        <div
-          className={styles.Vaccine}
-          style={{ display: widthSize < 768 ? (toggle ? "flex" : "none") : "" }}
-        >
-          <h3 className={styles.title}>Vaccine</h3>
-          <Vaccine />
-          <Vaccine />
-          <Vaccine />
-          <Vaccine />
-          <Vaccine />
-        </div>
-      </div>
+              {props.prescription === false ? (
+                props.prescription.map((prescription) => (
+                  <Prescription
+                    key={prescription._id}
+                    prescription={prescription}
+                  />
+                ))
+              ) : (
+                <h3>No Prescription</h3>
+              )}
+            </div>
+            <div
+              className={styles.Vaccine}
+              style={{
+                display: widthSize < 768 ? (toggle ? "flex" : "none") : "",
+              }}
+            >
+              <h3 className={styles.title}>Vaccine</h3>
+              <Vaccine />
+              <Vaccine />
+              <Vaccine />
+              <Vaccine />
+              <Vaccine />
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 };

@@ -90,8 +90,19 @@ const Login = (props) => {
           },
         }
       );
+
+      const res2 = await axios.get(
+        "https://med-backend-production.up.railway.app/Patient/profileData?",
+        {
+          params: {
+            userID: props.userId,
+          },
+        }
+      );
+      console.log(res2);
       console.log(res);
       props.setPrescription(res.data);
+      props.setUserData(res2.data);
 
       // props.setPrescription(res.data);
     } catch (err) {

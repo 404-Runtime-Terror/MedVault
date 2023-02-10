@@ -1,53 +1,53 @@
-.NewUserBox{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 50%;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
-    background: linear-gradient(
-        105deg,
-        rgba(0, 51, 102, 1) 0%,
-        rgba(47, 143, 138, 1) 100%
-      );
-    border-radius: var(--border-radius);
+.NewUserBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(
+    105deg,
+    rgba(0, 51, 102, 1) 0%,
+    rgba(47, 143, 138, 1) 100%
+  );
+  border-radius: var(--border-radius);
+  padding: 30px;
 }
 .formContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .formHeader {
-    margin: 2px 0;
-    padding: 10px 20px;
-    font-size: 250%;
-    font-weight: 800;
-    border-radius: var(--border-radius);
-    color: #fff;
-  }
-  .description {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.formHeader {
+  margin: 2px 0;
+  padding: 10px 20px;
+  font-size: 250%;
+  font-weight: 800;
+  border-radius: var(--border-radius);
+  color: #fff;
+}
+.description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .description li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 7px;
-    list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+  list-style: none;
 }
 .description li span {
-    margin: 5px;
-    color: #fff;
+  margin: 5px;
+  color: #fff;
 }
 .description li input {
   padding: 5px;
-    font-size: x-large;
+  font-size: x-large;
   border: solid 2px var(--secondary-color);
   border-radius: var(--border-radius);
   outline: none;
@@ -59,25 +59,24 @@
 }
 
 .description li select {
-    appearance: none;
-    background-image: none;
-    width: 100%;
-    height: 100%;
-    padding: 5px;
-    font-size: x-large;
-    border: solid 2px var(--secondary-color);
-    border-radius: var(--border-radius);
-    outline: none;
-
+  appearance: none;
+  background-image: none;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  font-size: x-large;
+  border: solid 2px var(--secondary-color);
+  border-radius: var(--border-radius);
+  outline: none;
 }
- 
+
 .select {
-    position: relative;
-    display: block;
-    width: 15em;
-    height: 2em;
-    line-height: 3;
-    overflow: hidden;
-    border-radius: .25em;
-    padding-bottom: 10px;
+  position: relative;
+  display: block;
+  width: 15em;
+  height: 2em;
+  line-height: 3;
+  overflow: hidden;
+  border-radius: 0.25em;
+  padding-bottom: 10px;
 }
