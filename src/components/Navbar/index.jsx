@@ -1,7 +1,7 @@
 import style from "./style.module.css";
 import Link from "next/link";
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <nav className={style.navbar}>
       <h1>HealthVault</h1>
@@ -12,8 +12,11 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link href="/dashboard/patient" className={style.list}>
-            Patient
+          <Link
+            href={props.isDoctor ? "/dashboard/doctor" : "/dashboard/patient"}
+            className={style.list}
+          >
+            {props.isDoctor ? "Doctor Dashboard" : "Patient Dashboard"}
           </Link>
         </li>
       </ul>
