@@ -103,7 +103,6 @@ const Login = (props) => {
     <>
       {type}
       <div className={`${style.loginWrapper} gradient`}>
-        /
         <div className={style.loginLeft}>
           <div className={style.quote}>
             <div>This World Shall No Pain </div>
