@@ -33,6 +33,3 @@ HealthVault is built with cutting-edge technologies including :
 - For healthcare providers, complete the KYC process to start managing patient records.
 - Log in and explore the intuitive interface to manage and access your medical records.
 
-[Get started with HealthVault now]()
-
-![HealthVault Screenshot]()
