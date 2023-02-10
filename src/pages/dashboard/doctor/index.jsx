@@ -7,12 +7,15 @@ import Button from "../../../components/Button";
 import { DataGrid } from "@mui/x-data-grid";
 
 import { RxCross2 } from "react-icons/rx";
+import { MdModeEditOutline } from "react-icons/md";
+import Prescriptionform from "../../../components/PrescriptionForm";
 
 const Doctor = (props) => {
   const [result, setResult] = React.useState("No result");
   const [isQRScannerOpen, setIsQRScannerOpen] = React.useState(false);
   const [selected, setSelected] = React.useState("No result");
   const [open, setOpen] = React.useState(false);
+  const [isEditOpen, setIsEditOpen] = React.useState(false);
 
   const rows = [
     {
@@ -118,12 +121,25 @@ const Doctor = (props) => {
           onClick={() => setOpen(false)}
           className={styles.cross}
         />
+
+        <MdModeEditOutline
+          size="2rem"
+          onClick={() => setIsEditOpen(!isEditOpen)}
+          className={styles.edit}
+        />
         <h1>Prescription</h1>
         <br />
-        <h2>{selected.fullname}</h2>
-        <h3>{selected.date}</h3>
-        <h3>{selected.age}</h3>
-        <h3>{selected.Prescription}</h3>
+
+        {isEditOpen ? (
+          <Prescriptionform />
+        ) : (
+          <>
+            <h2>{selected.fullname}</h2>
+            <h3>{selected.date}</h3>
+            <h3>{selected.age}</h3>
+            <h3>{selected.Prescription}</h3>{" "}
+          </>
+        )}
       </div>
 
       <br />
