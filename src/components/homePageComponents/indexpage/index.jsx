@@ -34,7 +34,7 @@ const navbar = () => {
                 <h1 className={style.product}>HealthVault</h1>
                 <ul>
                     <li onClick={() => scrollTo(Home)} className={style.list}><a href="#Home">Home</a></li>
-                    <li onClick={() => scrollTo(AboutUs)} className={style.list}><a href="#Aboutus">Aboutus</a></li>
+                    <li onClick={() => scrollTo(AboutUs)} className={style.list}><a href="#Aboutus">AboutUs</a></li>
                     <li onClick={() => scrollTo(Question)} className={style.list}><a href="#FAQ">FAQ</a></li>
                     <li onClick={()=>{display === false ? setDisplay(true): setDisplay(false)
                                     }}className={style.list}><a href="#helpline">Helpline</a></li>

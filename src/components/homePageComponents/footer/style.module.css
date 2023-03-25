@@ -2,12 +2,14 @@
   display: flex;
   background-color: var(--secondary-color);
   color: #fff;
+  margin: 90px 0 0 0;
   padding: 20px;
   font-size: 22px;
   font-weight: 600;
   font-family: "Roboto", sans-serif;
   justify-content: space-between;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+
 }
 
 .footerLeft {

@@ -51,6 +51,7 @@
 .list:hover{
     background-color: var(--secondary-color);
     border-radius: var(--border-radius);
+    color: white ;
 }
 
 
